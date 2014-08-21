@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script>
+function test1(){
+
+var pattern = /^\d+$/;//只能是数字
+
+//注意前后不能有引号，那样就是声名字符串了，需要用/来声明正则对象，VBSCRIPT是用双引号
+var teststr="123";
+
+//match函数方法是使用正则表达式模式对字符串执行查找，并将包含查找的结果作为数组返回,如果js中match函数方法没有找到匹配，返回 null。如果找到匹配返回一个数组并且更新全局 RegExp 对象的属性以反映匹配结果。JavaScript中match函数方法返回的数组有三个属性：input、index和lastIndex。Input 属性包含整个的被查找字符串。Index 属性包含了在整个被查找字符串中匹配的子字符串的位置。LastIndex 属性包含了最后一次匹配中最后一个字符的下一个位置。如果没有设置全局标志 (g)，数组的0元素包含整个匹配，而第 1 到 n 元素包含了匹配中曾出现过的任一个子匹配。这相当于没有设置全局标志的 exec 方法。如果设置了全局标志，元素0到n中包含所有匹配。
+//注意：match的参数可以是直接的正则对象.match(/\d/)或正则的对象变量，或直接字符串
+if(teststr.match(pattern)==null){
+
+alert('包含非数字');
+}else{
+alert("teststr.match(pattern).length="+teststr.match(pattern).length+"\n"+"teststr.match(pattern).input="+teststr.match(pattern).input+"\n"+"teststr.match(pattern).index="+teststr.match(pattern).index+"\n"+"teststr.match(pattern).lastIndex="+teststr.match(pattern).lastIndex);
+
+}
+
+}
+
+function test2(){
+		var regExp = new RegExp("^\d+$");
+		    if(regExp.test(final_value)){
+			
+			}
+}
+
+</script>
+<title>无标题文档</title>
+</head>
+<body>
+<input  type="button" name="input1" onclick="test1()" value="第一种正则使用方法"/>
+<input  type="button" name="input1" onclick="test2()" value="第二种正则使用方法"/>
+</body>
+</html>
